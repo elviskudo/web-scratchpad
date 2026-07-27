@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-ext-50: #f0f7ff;
+  --color-ext-100: #e0effe;
+  --color-ext-200: #b9dffd;
+  --color-ext-300: #7cc5fc;
+  --color-ext-400: #36a7f8;
+  --color-ext-500: #0c8ce9;
+  --color-ext-600: #006fc7;
+  --color-ext-700: #0158a1;
+  --color-ext-800: #064b85;
+  --color-ext-900: #0b3f6e;
+  --color-ext-950: #072849;
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d5dae2;
+  --color-ink-300: #b0b9c8;
+  --color-ink-400: #8593aa;
+  --color-ink-500: #667790;
+  --color-ink-600: #515f76;
+  --color-ink-700: #434d60;
+  --color-ink-800: #3a4251;
+  --color-ink-900: #343a46;
+  --color-ink-950: #22262f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #22262f;
+  color: #343a46;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b9c8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8593aa;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-border {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(12, 140, 233, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(12, 140, 233, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+.field-highlight {
+  outline: 3px solid #0c8ce9 !important;
+  outline-offset: 2px;
+  animation: pulse-border 1.2s ease-in-out 2;
+  background-color: #e0effe !important;
+}
+
+.field-simulated {
+  outline: 3px solid #16a34a !important;
+  outline-offset: 2px;
+  background-color: #dcfce7 !important;
+}

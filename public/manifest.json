@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Web Screening Scratchpad",
+  "version": "0.1.0",
+  "description": "Scan · AI analysis · validate — never auto-submit",
+  "permissions": ["activeTab", "scripting", "storage", "sidePanel"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "action": {
+    "default_title": "Open Web Screening Scratchpad"
+  },
+  "icons": {
+    "16": "images/web-scratchpad-logo.png",
+    "48": "images/web-scratchpad-logo.png",
+    "128": "images/web-scratchpad-logo.png"
+  }
+}
